@@ -1,0 +1,30 @@
+{
+  "name": "No Google Search Redirect",
+  "version": "1.0.1",
+  "manifest_version": 2,
+  "description": "Open the link directly in google search result page without google's auto redirect",
+  "page_action" :
+  {
+    "default_icon" : "icon-19.png",
+    "default_title" : "No Google Search Redirect"
+  },
+  "permissions" : [
+    "tabs", "background" 
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "*://*/*", "file:///*" ],
+      "js": ["jquery-1.8.2.min.js", "purl.js", "content.js"]
+    }
+  ],
+  "icons" : {
+    "48" : "icon-48.png",
+    "128" : "icon-128.png"
+  },
+  "web_accessible_resources": [
+    "icon-19.png"
+  ]
+}
